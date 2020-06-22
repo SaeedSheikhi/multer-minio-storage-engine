@@ -1,5 +1,5 @@
 {
-  "name": "multer-minio",
+  "name": "multer-minio-storage-engine",
   "version": "1.0.0",
   "description": "Streaming multer storage engine for Minio",
   "main": "index.js",
@@ -19,9 +19,9 @@
   "author": "Saeed Sheikhi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/saeedsheikhi/multer-minio/issues"
+    "url": "https://github.com/saeedsheikhi/multer-minio-storage-engine/issues"
   },
-  "homepage": "https://github.com/saeedsheikhi/multer-minio#readme",
+  "homepage": "https://github.com/saeedsheikhi/multer-minio-storage-engine#readme",
   "dependencies": {
     "file-type": "^3.3.0",
     "is-svg": "^2.1.0",
@@ -37,5 +37,8 @@
     "on-finished": "^2.3.0",
     "standard": "^5.4.1",
     "xtend": "^4.0.1"
+  },
+  "directories": {
+    "test": "test"
   }
 }

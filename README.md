@@ -7,7 +7,7 @@ This project is mostly an integration piece for existing code samples from Multe
 ## Installation
 
 ```sh
-yarn add multer-minio
+yarn add multer-minio-storage-engine
 ```
 
 ## Usage
@@ -16,7 +16,7 @@ yarn add multer-minio
 const Minio = require('minio');
 const express = require('express');
 const multer = require('multer');
-const multerS3 = require('multer-minio');
+const multerS3 = require('multer-minio-storage-engine');
 
 const app = express();
 
@@ -44,7 +44,7 @@ app.post('/upload', upload.array('photos', 3), function (req, res, next) {
 
 ### File information
 
-Each file contains the following information exposed by `multer-minio`:
+Each file contains the following information exposed by `multer-minio-storage-engine`:
 
 | Key           | Description                            | Note        |
 | ------------- | -------------------------------------- | ----------- |
@@ -76,7 +76,7 @@ const opts = {
 
 ## Setting Custom Content-Type
 
-The optional `contentType` option can be used to set Content/mime type of the file. By default the content type is set to `application/octet-stream`. If you want multer-minio to automatically find the content-type of the file, use the `multerS3.AUTO_CONTENT_TYPE` constant. Here is an example that will detect the content type of the file being uploaded.
+The optional `contentType` option can be used to set Content/mime type of the file. By default the content type is set to `application/octet-stream`. If you want multer-minio-storage-engine to automatically find the content-type of the file, use the `multerS3.AUTO_CONTENT_TYPE` constant. Here is an example that will detect the content type of the file being uploaded.
 
 ```javascript
 const upload = multer({
