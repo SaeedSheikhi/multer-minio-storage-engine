@@ -1,4 +1,4 @@
-# Multer S3
+# Multer Minio
 
 Streaming multer storage engine for minio.
 
