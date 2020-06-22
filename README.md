@@ -16,7 +16,7 @@ yarn add multer-minio-storage-engine
 const Minio = require('minio');
 const express = require('express');
 const multer = require('multer');
-const multerS3 = require('multer-minio-storage-engine');
+const multerMinio = require('multer-minio-storage-engine');
 
 const app = express();
 
@@ -76,14 +76,14 @@ const opts = {
 
 ## Setting Custom Content-Type
 
-The optional `contentType` option can be used to set Content/mime type of the file. By default the content type is set to `application/octet-stream`. If you want multer-minio-storage-engine to automatically find the content-type of the file, use the `multerS3.AUTO_CONTENT_TYPE` constant. Here is an example that will detect the content type of the file being uploaded.
+The optional `contentType` option can be used to set Content/mime type of the file. By default the content type is set to `application/octet-stream`. If you want multer-minio-storage-engine to automatically find the content-type of the file, use the `multerMinio.AUTO_CONTENT_TYPE` constant. Here is an example that will detect the content type of the file being uploaded.
 
 ```javascript
 const upload = multer({
-  storage: multerS3({
+  storage: multerMinio({
     minio: minioClient,
     bucketName: 'some-bucket',
-    contentType: multerS3.AUTO_CONTENT_TYPE,
+    contentType: multerMinio.AUTO_CONTENT_TYPE,
     objectName: function (req, file, cb) {
       cb(null, Date.now().toString());
     },
