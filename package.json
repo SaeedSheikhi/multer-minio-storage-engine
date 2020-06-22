@@ -1,7 +1,7 @@
 {
-  "name": "multer-s3",
-  "version": "2.9.0",
-  "description": "Streaming multer storage engine for AWS S3",
+  "name": "multer-minio",
+  "version": "1.0.0",
+  "description": "Streaming multer storage engine for Minio",
   "main": "index.js",
   "scripts": {
     "test": "standard && mocha test/basic.js"
@@ -12,23 +12,23 @@
   },
   "keywords": [
     "multer",
-    "s3",
+    "minio",
     "amazon",
     "aws"
   ],
-  "author": "badunk",
+  "author": "Saeed Sheikhi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/badunk/multer-s3/issues"
+    "url": "https://github.com/saeedsheikhi/multer-minio/issues"
   },
-  "homepage": "https://github.com/badunk/multer-s3#readme",
+  "homepage": "https://github.com/saeedsheikhi/multer-minio#readme",
   "dependencies": {
     "file-type": "^3.3.0",
     "is-svg": "^2.1.0",
     "run-parallel": "^1.1.6"
   },
   "devDependencies": {
-    "aws-sdk": "^2.2.32",
+    "minio": "^7.0.15",
     "concat-stream": "^1.5.1",
     "express": "^4.13.1",
     "form-data": "^1.0.0-rc3",
