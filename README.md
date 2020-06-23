@@ -2,7 +2,7 @@
 
 Streaming multer storage engine for minio.
 
-This project is mostly an integration piece for existing code samples from Multer's [storage engine documentation](https://github.com/expressjs/multer/blob/master/StorageEngine.md) with [s3fs](https://github.com/RiptideElements/s3fs) as the substitution piece for file system. Existing solutions I found required buffering the multipart uploads into the actual filesystem which is difficult to scale.
+This project is mostly an integration piece for existing code samples from Multer's [storage engine documentation](https://github.com/expressjs/multer/blob/master/StorageEngine.md) with [MinIO Client SDK for Javascript](https://github.com/minio/minio-js) as the substitution piece for file system. Existing solutions I found required buffering the multipart uploads into the actual filesystem which is difficult to scale.
 
 ## Installation
 
@@ -29,7 +29,7 @@ const upload = multer({
     minio: minioClient,
     bucketName: 'some-bucket',
     metaData: function (req, file, cb) {
-      cb(null, {fieldName: file.fieldname});
+      cb(null, {mimetype: file.mimetype});
     },
     objectName: function (req, file, cb) {
       cb(null, Date.now().toString());
@@ -64,7 +64,7 @@ Here is an example that stores all fields in the request body as metaData, and u
 ```javascript
 const opts = {
   minio: minioClient,
-  bucketName: config.originalsBucketName,
+  bucketName: 'some-bucket',
   metaData: function (req, file, cb) {
     cb(null, Object.assign({}, req.body));
   },
@@ -74,6 +74,7 @@ const opts = {
 };
 ```
 
+<!--
 ## Setting Custom Content-Type
 
 The optional `contentType` option can be used to set Content/mime type of the file. By default the content type is set to `application/octet-stream`. If you want multer-minio-storage-engine to automatically find the content-type of the file, use the `multerMinio.AUTO_CONTENT_TYPE` constant. Here is an example that will detect the content type of the file being uploaded.
@@ -91,12 +92,13 @@ const upload = multer({
 });
 ```
 
-You may also use a function as the `contentType`, which should be of the form `function(req, file, cb)`.
+You may also use a function as the `contentType`, which should be of the form `function(req, file, cb)`. -->
 
+<!--
 ## Testing
 
-The tests mock all access to S3 and can be run completely offline.
+The tests mock all access to Minio and can be run completely offline.
 
 ```sh
 npm test
-```
+``` -->
